@@ -40,7 +40,7 @@ export function textoEnCadena(id, texto) {
   $contadorText.innerHTML = `La palabra ${texto} se repite ${contador} veces.<br>Texto modificado: ${cadenaReemplazada}`;
 }
 
-export function insertarTextoDiamico(id, nuevoTexto) {
+export function insertarTextoDinamico(id, nuevoTexto) {
   const elemento = d.getElementById(id);
   
   if (elemento) {
@@ -50,3 +50,24 @@ export function insertarTextoDiamico(id, nuevoTexto) {
   }
 
 }
+export function handleClick(id) {
+  const $myButton = d.getElementById(id);
+
+  $myButton.addEventListener("click", () => {
+    const userInput = prompt("Por favor, ingresa tu respuesta:");
+
+    if (userInput !== null) {
+      console.log("En un momento procesaremos su pregunta y en breve emitiremos una respuesta:", userInput);
+      // Aquí puedes realizar cualquier acción con la respuesta ingresada por el usuario
+    }
+  });
+}
+
+export function addNewClass(classSelector, newclass){
+  const $classDom = document.querySelectorAll(classSelector);
+
+  $classDom.forEach(element => {
+    element.classList.add(newclass); // Cambiado de newClass a newclass
+  });
+}
+
